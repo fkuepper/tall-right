@@ -1,0 +1,53 @@
+<layout id="WatchFace">
+    <drawable class="Background" />
+
+    <label id="DateDayLabel" x="right" y="top" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_WHITE" />
+    <label id="DateMonthLabel" x="right" y="20" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_WHITE" />
+
+    <label id="AMPMLabel1" x="72" y="42" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_WHITE" />
+    <label id="AMPMLabel2" x="108" y="42" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_WHITE" />
+
+    <label id="TimeHoursLabel" x="right" y="32" font="@Fonts.longishFont" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_WHITE" />
+    <label id="TimeMinsLabel" x="right" y="112" font="@Fonts.longishFont" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_WHITE" />
+
+
+	<drawable id="BatteryStateIcon" class="BatteryStateDrawable">
+        <param name="x">0</param>
+        <param name="y">7</param>
+        <param name="w">22</param>
+        <param name="h">14</param>
+    </drawable>
+    <label id="BattPercentLabel" x="26" y="2" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+
+    <label id="BluetoothIconLabel" x="left" y="21" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="DNDIconLabel" x="left" y="44" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+
+    <label id="AlarmsIconLabel" x="left" y="69" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="AlarmsCountLabel" x="26" y="72" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+
+    <label id="NotificationsIconLabel" x="left" y="94" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="NotificationsCountLabel" x="26" y="97" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+
+	<drawable id="MoveBar" class="ProgressDrawable">
+        <param name="x">0</param>
+        <param name="y">122</param>
+        <param name="w">70</param>
+        <param name="h">14</param>
+    </drawable>
+    <label id="MoveLabel" x="left" y="117" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+
+    <label id="HeartrateIconLabel" x="left" y="132" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="HeartrateCountLabel" x="26" y="136" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+
+    <label id="CaloriesIconLabel" x="left" y="153" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="CaloriesCountLabel" x="26" y="157" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+
+    <label id="StepsIconLabel" x="left" y="174" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="StepsCountLabel" x="26" y="178" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+	<drawable id="StepsProgress" class="ProgressDrawable">
+        <param name="x">0</param>
+        <param name="y">199</param>
+        <param name="w">70</param>
+        <param name="h">6</param>
+    </drawable>
+</layout>
