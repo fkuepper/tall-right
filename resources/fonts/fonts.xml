@@ -1,0 +1,4 @@
+<fonts>
+	<font id="iconsFont" filename="icons.fnt" filter="ABCDEFG"/>
+	<font id="longishFont" filename="longish.fnt" filter="1234567890:"/>
+</fonts>
