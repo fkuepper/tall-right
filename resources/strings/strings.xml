@@ -1,0 +1,33 @@
+<strings>
+
+    <string id="AppName">Tall Right</string>
+
+    <string id="BackgroundColorTitle">Background Color</string>
+    <string id="HoursColorTitle">Hours Color</string>
+    <string id="MinutesColorTitle">Minutes Color</string>
+    <string id="DateColorTitle">Date Color</string>
+    <string id="BatteryColorTitle">Battery Color</string>
+    <string id="BluetoothColorTitle">Bluetooth indicator Color</string>
+    <string id="AlarmsColorTitle">Alarms Color</string>
+    <string id="DNDColorTitle">Do not disturb Color</string>
+    <string id="NotificationsColorTitle">Notifications Color</string>
+    <string id="ActivityColorTitle">Activity Color</string>
+    <string id="ActivityProgressOutlineColorTitle">Activity Progress Outline Color</string>
+    <string id="ActivityProgressColorTitle">Activity Progress Color</string>
+    <string id="ActivityGoalReachedColorTitle">Activity Goal Reached Color</string>
+    <string id="PadWithLeadingZeroesTitle">Pad hours and minutes with leading zero</string>
+
+    <string id="ColorBlack">Black</string>
+    <string id="ColorDarkGray">Dark Gray</string>
+    <string id="ColorLightGray">Light Gray</string>
+    <string id="ColorWhite">White</string>
+    <string id="ColorBlue">Blue</string>
+    <string id="ColorLightBlue">Light Blue</string>
+    <string id="ColorRed">Red</string>
+    <string id="ColorLightRed">Light Red</string>
+    <string id="ColorGreen">Green</string>
+    <string id="ColorLightGreen">Light Green</string>
+    <string id="ColorYellow">Yellow</string>
+    <string id="ColorLightYellow">Light Yellow</string>
+
+</strings>
