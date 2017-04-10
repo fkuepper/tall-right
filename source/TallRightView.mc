@@ -99,6 +99,9 @@ class TallRightView extends Ui.WatchFace {
 			// minimum move bar size is 40%; add the rest to that minimum size
 			moveBarProgress = 0.4 + (0.6 * moveBarProgress);
 		}
+		if (!App.getApp().getProperty("EnableMoveBar")) {
+			moveBarProgress = 0;
+		}
 		var moveBarDrawable = View.findDrawableById("MoveBar");
 		moveBarDrawable.goal = 1.0;
 		moveBarDrawable.current = moveBarProgress;
