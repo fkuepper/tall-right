@@ -44,12 +44,9 @@ class TallRightView extends Ui.WatchFace {
         	modifyLabel("AMPMLabel1", "HoursColor", "");
         	modifyLabel("AMPMLabel2", "HoursColor", "");
         } else {
-	        var ampm = "";
+	        var ampm = hours >= 12 ? "PM" : "AM";
             if (hours > 12) {
                 hours = hours - 12;
-                ampm = "PM";
-            } else {
-            	ampm = "AM";
             }
             if (hours >= 10 || zeroPad) {
 	        	modifyLabel("AMPMLabel1", "HoursColor", ampm);
@@ -91,10 +88,10 @@ class TallRightView extends Ui.WatchFace {
 		var hrSample = Act.getHeartRateHistory(1, true).next();
 
 		modifyActivityProgress("StepsProgress", "StepsIconLabel", "E", "StepsCountLabel", activityInfo.stepGoal, activityInfo.steps);
-		modifyLabel("CaloriesIconLabel", getProgressColorProperty(activityInfo.stepGoal, activityInfo.steps), "F");
-		modifyLabel("CaloriesCountLabel", getProgressColorProperty(activityInfo.stepGoal, activityInfo.steps), activityInfo.calories.toString());
-		modifyLabel("HeartrateIconLabel", getProgressColorProperty(activityInfo.stepGoal, activityInfo.steps), "G");
-		modifyLabel("HeartrateCountLabel", getProgressColorProperty(activityInfo.stepGoal, activityInfo.steps), hrSample == null ? "n/a" : hrSample.heartRate.toString());
+		modifyLabel("CaloriesIconLabel", "CaloriesColor", "F");
+		modifyLabel("CaloriesCountLabel", "CaloriesColor", activityInfo.calories.toString());
+		modifyLabel("HeartrateIconLabel", "HeartrateColor", "G");
+		modifyLabel("HeartrateCountLabel", "HeartrateColor", hrSample == null ? "n/a" : hrSample.heartRate.toString());
 
 		// transform move bar level to progress and draw move bar
 		var moveBarProgress = 1.0 * (activityInfo.moveBarLevel - Act.MOVE_BAR_LEVEL_MIN) / (Act.MOVE_BAR_LEVEL_MAX - Act.MOVE_BAR_LEVEL_MIN);
@@ -128,7 +125,7 @@ class TallRightView extends Ui.WatchFace {
 		var progressDrawable = View.findDrawableById(progressDrawableId);
 		progressDrawable.goal = goal;
 		progressDrawable.current = current;
-		progressDrawable.outlineColor = getColor("ActivityProgressOutlineColor");
+		progressDrawable.outlineColor = getColor("StepsProgressOutlineColor");
 		progressDrawable.progressColor = getColor(getProgressColorProperty(1, 0));
 		progressDrawable.reachedColor = getColor(getProgressColorProperty(1, 1));
 		var progressLabelColor = getProgressColorProperty(goal, current);
@@ -137,7 +134,7 @@ class TallRightView extends Ui.WatchFace {
     }
 
     function getProgressColorProperty(goal, current) {
-		return current >= goal ? "ActivityGoalReachedColor" : "ActivityProgressColor";
+		return current >= goal ? "StepsGoalReachedColor" : "StepsProgressColor";
     }
 
     function getColor(colorPropertyName) {
