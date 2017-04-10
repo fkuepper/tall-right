@@ -19,35 +19,35 @@
     </drawable>
     <label id="BattPercentLabel" x="26" y="2" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
 
-    <label id="BluetoothIconLabel" x="left" y="21" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
-    <label id="DNDIconLabel" x="left" y="44" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="BluetoothIconLabel" x="left" y="19" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="DNDIconLabel" x="left" y="40" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
 
-    <label id="AlarmsIconLabel" x="left" y="69" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
-    <label id="AlarmsCountLabel" x="26" y="72" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="AlarmsIconLabel" x="left" y="63" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="AlarmsCountLabel" x="22" y="66" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
 
-    <label id="NotificationsIconLabel" x="left" y="94" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
-    <label id="NotificationsCountLabel" x="26" y="97" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="NotificationsIconLabel" x="left" y="86" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="NotificationsCountLabel" x="22" y="88" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
 
 	<drawable id="MoveBar" class="ProgressDrawable">
         <param name="x">0</param>
-        <param name="y">122</param>
+        <param name="y">116</param>
         <param name="w">70</param>
-        <param name="h">14</param>
+        <param name="h">18</param>
     </drawable>
-    <label id="MoveLabel" x="left" y="117" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="MoveLabel" x="left" y="112" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
 
-    <label id="HeartrateIconLabel" x="left" y="132" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
-    <label id="HeartrateCountLabel" x="26" y="136" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="HeartrateIconLabel" x="left" y="130" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="HeartrateCountLabel" x="22" y="132" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
 
-    <label id="CaloriesIconLabel" x="left" y="153" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
-    <label id="CaloriesCountLabel" x="26" y="157" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="CaloriesIconLabel" x="left" y="150" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="CaloriesCountLabel" x="22" y="152" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
 
-    <label id="StepsIconLabel" x="left" y="174" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
-    <label id="StepsCountLabel" x="26" y="178" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="StepsIconLabel" x="left" y="170" font="@Fonts.iconsFont" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="StepsCountLabel" x="22" y="172" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
 	<drawable id="StepsProgress" class="ProgressDrawable">
         <param name="x">0</param>
-        <param name="y">199</param>
+        <param name="y">196</param>
         <param name="w">70</param>
-        <param name="h">6</param>
+        <param name="h">8</param>
     </drawable>
 </layout>
