@@ -11,11 +11,13 @@
     <string id="AlarmsColorTitle">Alarms Color</string>
     <string id="DNDColorTitle">Do not disturb Color</string>
     <string id="NotificationsColorTitle">Notifications Color</string>
-    <string id="ActivityColorTitle">Activity Color</string>
-    <string id="ActivityProgressOutlineColorTitle">Activity Progress Outline Color</string>
-    <string id="ActivityProgressColorTitle">Activity Progress Color</string>
-    <string id="ActivityGoalReachedColorTitle">Activity Goal Reached Color</string>
+    <string id="HeartrateColorTitle">Heartrate Color</string>
+    <string id="CaloriesColorTitle">Calories Color</string>
+    <string id="StepsProgressOutlineColorTitle">Steps Progress Outline Color</string>
+    <string id="StepsProgressColorTitle">Steps Progress Color</string>
+    <string id="StepsGoalReachedColorTitle">Steps Goal Reached Color</string>
     <string id="PadWithLeadingZeroesTitle">Pad hours and minutes with leading zero</string>
+    <string id="EnableMoveBarTitle">Enable Move Bar</string>
 
     <string id="ColorBlack">Black</string>
     <string id="ColorDarkGray">Dark Gray</string>
