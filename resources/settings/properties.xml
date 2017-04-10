@@ -9,10 +9,12 @@
     <property id="AlarmsColor" type="number">0xFFFFFF</property>
     <property id="NotificationsColor" type="number">0xFFFFFF</property>
     <property id="DNDColor" type="number">0xFFFFFF</property>
-    <property id="ActivityColor" type="number">0xFFFFFF</property>
-    <property id="ActivityProgressOutlineColor" type="number">0x555555</property>
-    <property id="ActivityProgressColor" type="number">0xFFFFFF</property>
-    <property id="ActivityGoalReachedColor" type="number">0xFFFFFF</property>
+    <property id="HeartrateColor" type="number">0xFFFFFF</property>
+    <property id="CaloriesColor" type="number">0xFFFFFF</property>
+    <property id="StepsProgressOutlineColor" type="number">0x555555</property>
+    <property id="StepsProgressColor" type="number">0xFFFFFF</property>
+    <property id="StepsGoalReachedColor" type="number">0xFFFFFF</property>
     <property id="PadWithLeadingZeroes" type="boolean">true</property>
+    <property id="EnableMoveBar" type="boolean">true</property>
 
 </properties>
