@@ -17,7 +17,7 @@ class ProgressDrawable extends Ui.Drawable {
     }
 
     function draw(dc) {
-    	var appBgColor = App.getApp().getProperty("BackgroundColor");
+    	var appBgColor = App.getApp().colorValues.background;
 
     	// draw shape outline
 		dc.setColor(outlineColor == null ? appBgColor : outlineColor, appBgColor);

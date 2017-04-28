@@ -3,12 +3,15 @@ using Toybox.WatchUi as Ui;
 
 class TallRightApp extends App.AppBase {
 
+	var colorValues = new ColorValues();
+
     function initialize() {
         AppBase.initialize();
     }
 
     // onStart() is called on application start up
     function onStart(state) {
+    	colorValues.refresh();
     }
 
     // onStop() is called when your application is exiting
@@ -22,6 +25,7 @@ class TallRightApp extends App.AppBase {
 
     // New app settings have been received so trigger a UI update
     function onSettingsChanged() {
+    	colorValues.refresh();
         Ui.requestUpdate();
     }
 

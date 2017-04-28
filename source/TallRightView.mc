@@ -26,14 +26,15 @@ class TallRightView extends Ui.WatchFace {
 
     // Update the view
     function onUpdate(dc) {
+    	var colors = App.getApp().colorValues;
 
 		// get, format and show date
     	var dateInfo = Calendar.info( Time.now(), Calendar.FORMAT_LONG );
 		var dateDayString = Lang.format("$1$", [ dateInfo.day_of_week ]);
 		var dateMonthString = Lang.format("$1$. $2$", [ dateInfo.day, dateInfo.month ]);
 
-		modifyLabel("DateDayLabel", "DateColor", dateDayString);
-		modifyLabel("DateMonthLabel", "DateColor", dateMonthString);
+		modifyLabel("DateDayLabel", colors.date, dateDayString);
+		modifyLabel("DateMonthLabel", colors.date, dateMonthString);
 
 		// get, format and show time
         var clockTime = Sys.getClockTime();
@@ -41,19 +42,19 @@ class TallRightView extends Ui.WatchFace {
         var mins = clockTime.min;
         var zeroPad = App.getApp().getProperty("PadWithLeadingZeroes");
         if (Sys.getDeviceSettings().is24Hour) {
-        	modifyLabel("AMPMLabel1", "HoursColor", "");
-        	modifyLabel("AMPMLabel2", "HoursColor", "");
+        	modifyLabel("AMPMLabel1", colors.hours, "");
+        	modifyLabel("AMPMLabel2", colors.hours, "");
         } else {
 	        var ampm = hours >= 12 ? "PM" : "AM";
             if (hours > 12) {
                 hours = hours - 12;
             }
             if (hours >= 10 || zeroPad) {
-	        	modifyLabel("AMPMLabel1", "HoursColor", ampm);
-    	    	modifyLabel("AMPMLabel2", "HoursColor", "");
+	        	modifyLabel("AMPMLabel1", colors.hours, ampm);
+    	    	modifyLabel("AMPMLabel2", colors.hours, "");
             } else {
-        		modifyLabel("AMPMLabel1", "HoursColor", "");
-        		modifyLabel("AMPMLabel2", "HoursColor", ampm);
+        		modifyLabel("AMPMLabel1", colors.hours, "");
+        		modifyLabel("AMPMLabel2", colors.hours, ampm);
             }
         }
         if (zeroPad) {
@@ -64,34 +65,34 @@ class TallRightView extends Ui.WatchFace {
             mins = mins.format("%d");
         }
 
-        modifyLabel("TimeHoursLabel", "HoursColor", hours);
-        modifyLabel("TimeMinsLabel", "MinutesColor", mins);
+        modifyLabel("TimeHoursLabel", colors.hours, hours);
+        modifyLabel("TimeMinsLabel", colors.minutes, mins);
 
         var systemStats = Sys.getSystemStats();
 
-		modifyLabel("BattPercentLabel", "BatteryColor", systemStats.battery.format("%d") + "%");
+		modifyLabel("BattPercentLabel", colors.battery, systemStats.battery.format("%d") + "%");
 
 		var settings = Sys.getDeviceSettings();
 
-		modifyLabel("BluetoothIconLabel", "BluetoothColor", settings.phoneConnected ? "B" : "");
-		modifyLabel("DNDIconLabel", "DNDColor", settings.doNotDisturb ? "D" : "");
+		modifyLabel("BluetoothIconLabel", colors.bluetooth, settings.phoneConnected ? "B" : "");
+		modifyLabel("DNDIconLabel", colors.dnd, settings.doNotDisturb ? "D" : "");
 
 		var alarmCount = settings.alarmCount;
-		modifyLabel("AlarmsIconLabel", "AlarmsColor", alarmCount > 0 ? "A" : "");
-		modifyLabel("AlarmsCountLabel", "AlarmsColor", alarmCount > 0 ? alarmCount.format("%d") : "");
+		modifyLabel("AlarmsIconLabel", colors.alarms, alarmCount > 0 ? "A" : "");
+		modifyLabel("AlarmsCountLabel", colors.alarms, alarmCount > 0 ? alarmCount.format("%d") : "");
 
 		var notificationCount = settings.notificationCount;
-		modifyLabel("NotificationsIconLabel", "NotificationsColor", notificationCount > 0 ? "C" : "");
-		modifyLabel("NotificationsCountLabel", "NotificationsColor", notificationCount > 0 ? notificationCount.format("%d") : "");
+		modifyLabel("NotificationsIconLabel", colors.notifications, notificationCount > 0 ? "C" : "");
+		modifyLabel("NotificationsCountLabel", colors.notifications, notificationCount > 0 ? notificationCount.format("%d") : "");
 
 		var activityInfo = Act.getInfo();
 		var hrSample = Act.getHeartRateHistory(1, true).next();
 
 		modifyActivityProgress("StepsProgress", "StepsIconLabel", "E", "StepsCountLabel", activityInfo.stepGoal, activityInfo.steps);
-		modifyLabel("CaloriesIconLabel", "CaloriesColor", "F");
-		modifyLabel("CaloriesCountLabel", "CaloriesColor", activityInfo.calories.toString());
-		modifyLabel("HeartrateIconLabel", "HeartrateColor", "G");
-		modifyLabel("HeartrateCountLabel", "HeartrateColor", hrSample == null ? "n/a" : hrSample.heartRate.toString());
+		modifyLabel("CaloriesIconLabel", colors.calories, "F");
+		modifyLabel("CaloriesCountLabel", colors.calories, activityInfo.calories.toString());
+		modifyLabel("HeartrateIconLabel", colors.heartrate, "G");
+		modifyLabel("HeartrateCountLabel", colors.heartrate, hrSample == null ? "n/a" : hrSample.heartRate.toString());
 
 		// transform move bar level to progress and draw move bar
 		var moveBarProgress = 1.0 * (activityInfo.moveBarLevel - Act.MOVE_BAR_LEVEL_MIN) / (Act.MOVE_BAR_LEVEL_MAX - Act.MOVE_BAR_LEVEL_MIN);
@@ -105,21 +106,21 @@ class TallRightView extends Ui.WatchFace {
 		var moveBarDrawable = View.findDrawableById("MoveBar");
 		moveBarDrawable.goal = 1.0;
 		moveBarDrawable.current = moveBarProgress;
-		moveBarDrawable.outlineColor = getColor("BackgroundColor");
-		moveBarDrawable.progressColor = getColor(getProgressColorProperty(1, 1));
-		moveBarDrawable.reachedColor = getColor(getProgressColorProperty(1, 0));
+		moveBarDrawable.outlineColor = colors.background;
+		moveBarDrawable.progressColor = getProgressColor(1, 1);
+		moveBarDrawable.reachedColor = getProgressColor(1, 0);
 		var moveLabel = View.findDrawableById("MoveLabel");
-		moveLabel.setColor(getColor("BackgroundColor"));
-		moveLabel.setText(moveBarProgress < 0.8 ? "Move!" : "M O V E !");
+		moveLabel.setColor(colors.background);
+		moveLabel.setText(moveBarProgress < 0.8 ? "Move!" : "M o v e !");
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
 
-    function modifyLabel(drawableId, colorPropertyName, labelText) {
+    function modifyLabel(drawableId, color, labelText) {
 		var view = View.findDrawableById(drawableId);
-		if (colorPropertyName != null) {
-        	view.setColor(getColor(colorPropertyName));
+		if (color != null) {
+        	view.setColor(color);
         }
 		view.setText(labelText);
     }
@@ -128,24 +129,17 @@ class TallRightView extends Ui.WatchFace {
 		var progressDrawable = View.findDrawableById(progressDrawableId);
 		progressDrawable.goal = goal;
 		progressDrawable.current = current;
-		progressDrawable.outlineColor = getColor("StepsProgressOutlineColor");
-		progressDrawable.progressColor = getColor(getProgressColorProperty(1, 0));
-		progressDrawable.reachedColor = getColor(getProgressColorProperty(1, 1));
-		var progressLabelColor = getProgressColorProperty(goal, current);
+		progressDrawable.outlineColor = App.getApp().colorValues.stepsProgressOutline;
+		progressDrawable.progressColor = getProgressColor(1, 0);
+		progressDrawable.reachedColor = getProgressColor(1, 1);
+		var progressLabelColor = getProgressColor(goal, current);
 		modifyLabel(iconDrawableId, progressLabelColor, iconChar);
 		modifyLabel(countDrawableId, progressLabelColor, current.toString());
     }
 
-    function getProgressColorProperty(goal, current) {
-		return current >= goal ? "StepsGoalReachedColor" : "StepsProgressColor";
-    }
-
-    function getColor(colorPropertyName) {
-    	var color = App.getApp().getProperty(colorPropertyName);
-    	if (color == null) {
-    		color = 0xFFFFFF;
-    	}
-    	return color;
+    function getProgressColor(goal, current) {
+      	var colors = App.getApp().colorValues;
+    	return current >= goal ? colors.stepsGoalReached : colors.stepsProgress;
     }
 
     // Called when this View is removed from the screen. Save the

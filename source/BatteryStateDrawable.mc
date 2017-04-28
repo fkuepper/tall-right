@@ -16,8 +16,10 @@ class BatteryStateDrawable extends Ui.Drawable {
     }
 
     function draw(dc) {
+    	var colors = App.getApp().colorValues;
+    	
 		// Battery percentage and icon
-		dc.setColor(App.getApp().getProperty("BatteryColor"), App.getApp().getProperty("BackgroundColor"));
+		dc.setColor(colors.battery, colors.background);
 
 		dc.drawRectangle(x, y, w-2, h);
 		dc.fillRectangle(x+w-2, y+4, 2, h-8); //draws the + connection point above a battery

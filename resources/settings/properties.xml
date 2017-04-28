@@ -1,19 +1,19 @@
 <properties>
 
-    <property id="BackgroundColor" type="number">0x000000</property>
-    <property id="DateColor" type="number">0xFFFFFF</property>
-    <property id="HoursColor" type="number">0xFFFFFF</property>
-    <property id="MinutesColor" type="number">0xFFFFFF</property>
-    <property id="BatteryColor" type="number">0xFFFFFF</property>
-    <property id="BluetoothColor" type="number">0xFFFFFF</property>
-    <property id="AlarmsColor" type="number">0xFFFFFF</property>
-    <property id="NotificationsColor" type="number">0xFFFFFF</property>
-    <property id="DNDColor" type="number">0xFFFFFF</property>
-    <property id="HeartrateColor" type="number">0xFFFFFF</property>
-    <property id="CaloriesColor" type="number">0xFFFFFF</property>
-    <property id="StepsProgressOutlineColor" type="number">0x555555</property>
-    <property id="StepsProgressColor" type="number">0xFFFFFF</property>
-    <property id="StepsGoalReachedColor" type="number">0xFFFFFF</property>
+    <property id="BackgroundColor" type="string">00-00-00</property>
+    <property id="DateColor" type="string">99-99-99</property>
+    <property id="HoursColor" type="string">99-99-99</property>
+    <property id="MinutesColor" type="string">99-99-99</property>
+    <property id="BatteryColor" type="string">99-99-99</property>
+    <property id="BluetoothColor" type="string">99-99-99</property>
+    <property id="AlarmsColor" type="string">99-99-99</property>
+    <property id="NotificationsColor" type="string">99-99-99</property>
+    <property id="DNDColor" type="string">99-99-99</property>
+    <property id="HeartrateColor" type="string">99-99-99</property>
+    <property id="CaloriesColor" type="string">99-99-99</property>
+    <property id="StepsProgressOutlineColor" type="string">00-00-00</property>
+    <property id="StepsProgressColor" type="string">99-99-99</property>
+    <property id="StepsGoalReachedColor" type="string">99-99-99</property>
     <property id="PadWithLeadingZeroes" type="boolean">true</property>
     <property id="EnableMoveBar" type="boolean">true</property>
 
