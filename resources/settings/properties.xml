@@ -1,7 +1,10 @@
 <properties>
 
-    <property id="BackgroundColor" type="string">00-00-00</property>
+    <property id="DataBackgroundColor" type="string">00-00-00</property>
+    <property id="TimeBackgroundColor" type="string">00-00-00</property>
+    <property id="StatusBackgroundColor" type="string">00-00-00</property>
     <property id="DateColor" type="string">99-99-99</property>
+    <property id="AMPMColor" type="string">99-99-99</property>
     <property id="HoursColor" type="string">99-99-99</property>
     <property id="MinutesColor" type="string">99-99-99</property>
     <property id="BatteryColor" type="string">99-99-99</property>
@@ -14,7 +17,8 @@
     <property id="StepsProgressOutlineColor" type="string">00-00-00</property>
     <property id="StepsProgressColor" type="string">99-99-99</property>
     <property id="StepsGoalReachedColor" type="string">99-99-99</property>
-    <property id="PadWithLeadingZeroes" type="boolean">true</property>
+    <property id="PadHoursWithLeadingZeroes" type="boolean">false</property>
+    <property id="PadMinutesWithLeadingZeroes" type="boolean">true</property>
     <property id="EnableMoveBar" type="boolean">true</property>
 
 </properties>

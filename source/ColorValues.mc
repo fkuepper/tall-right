@@ -1,48 +1,49 @@
-using Toybox.Application as App;
-
 class ColorValues {
 	hidden var black = 0x000000;
 	hidden var white = 0xFFFFFF;
 	
-	var background,
-		hours, minutes, date, 
+	var dataBackground, timeBackground, statusBackground,
+		ampm, hours, minutes, date, 
 		battery, bluetooth, dnd, alarms, notifications,
 		stepsProgress, stepsProgressOutline, stepsGoalReached, 
 		calories, heartrate;
 		
-	function refresh() {
-		background = parseColor("BackgroundColor");
-		hours = parseColor("HoursColor");
-		minutes = parseColor("MinutesColor");
-		date = parseColor("DateColor");
-		battery = parseColor("BatteryColor");
-		bluetooth = parseColor("BluetoothColor");
-		dnd = parseColor("DNDColor");
-		alarms = parseColor("AlarmsColor");
-		notifications = parseColor("NotificationsColor");
-		stepsProgress = parseColor("StepsProgressColor");
-		stepsProgressOutline = parseColor("StepsProgressOutlineColor");
-		stepsGoalReached = parseColor("StepsGoalReachedColor");
-		calories = parseColor("CaloriesColor");
-		heartrate = parseColor("HeartrateColor");
+	function refresh(propertyProvider) {
+		statusBackground = parseColor(propertyProvider, "StatusBackgroundColor", black);
+		dataBackground = parseColor(propertyProvider, "DataBackgroundColor", black);
+		timeBackground = parseColor(propertyProvider, "TimeBackgroundColor", black);
+		ampm = parseColor(propertyProvider, "AMPMColor", white);
+		hours = parseColor(propertyProvider, "HoursColor", white);
+		minutes = parseColor(propertyProvider, "MinutesColor", white);
+		date = parseColor(propertyProvider, "DateColor", white);
+		battery = parseColor(propertyProvider, "BatteryColor", white);
+		bluetooth = parseColor(propertyProvider, "BluetoothColor", white);
+		dnd = parseColor(propertyProvider, "DNDColor", white);
+		alarms = parseColor(propertyProvider, "AlarmsColor", white);
+		notifications = parseColor(propertyProvider, "NotificationsColor", white);
+		stepsProgress = parseColor(propertyProvider, "StepsProgressColor", white);
+		stepsProgressOutline = parseColor(propertyProvider, "StepsProgressOutlineColor", black);
+		stepsGoalReached = parseColor(propertyProvider, "StepsGoalReachedColor", white);
+		calories = parseColor(propertyProvider, "CaloriesColor", white);
+		heartrate = parseColor(propertyProvider, "HeartrateColor", white);
 	}
 	
-	function parseColor(colorSettingsProperty) {
-		var colorSpec = App.getApp().getProperty(colorSettingsProperty);
+	function parseColor(propertyProvider, colorSettingsProperty, defaultColor) {
+		var colorSpec = propertyProvider.getProperty(colorSettingsProperty);
 		if (colorSpec == null) {
-    		return black;
+    		return defaultColor;
     	}
     	if (!(colorSpec instanceof Toybox.Lang.String)) {
-    		return black;
+    		return defaultColor;
     	}
     	if (colorSpec.length() != 8) {
-    		return black;
+    		return defaultColor;
     	}
     	var red = calculateColorComponent(colorSpec, 0, 2);
     	var green = calculateColorComponent(colorSpec, 3, 5);
     	var blue = calculateColorComponent(colorSpec, 6, 8);
     	if (red == null || green == null || blue == null) {
-    		return black;
+    		return defaultColor;
     	}
     	return red * 256 * 256 + green * 256 + blue;
 	}

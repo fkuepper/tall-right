@@ -2,7 +2,10 @@
 
     <string id="AppName">Tall Right</string>
 
-    <string id="BackgroundColorTitle">Background Color</string>
+    <string id="StatusBackgroundColorTitle">Watch Status Background Color</string>
+    <string id="DataBackgroundColorTitle">Data Background Color</string>
+    <string id="TimeBackgroundColorTitle">Time Background Color</string>
+    <string id="AMPMColorTitle">AM/PM-Marker Color (for 12 hours time display))</string>
     <string id="HoursColorTitle">Hours Color</string>
     <string id="MinutesColorTitle">Minutes Color</string>
     <string id="DateColorTitle">Date Color</string>
@@ -16,7 +19,8 @@
     <string id="StepsProgressOutlineColorTitle">Steps Progress Outline Color</string>
     <string id="StepsProgressColorTitle">Steps Progress Color</string>
     <string id="StepsGoalReachedColorTitle">Steps Goal Reached Color</string>
-    <string id="PadWithLeadingZeroesTitle">Pad hours and minutes with leading zero</string>
+    <string id="PadHoursWithLeadingZeroesTitle">Pad hours with leading zero</string>
+    <string id="PadMinutesWithLeadingZeroesTitle">Pad minutes with leading zero</string>
     <string id="EnableMoveBarTitle">Enable Move Bar</string>
 
     <string id="ColorBlack">Black</string>

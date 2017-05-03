@@ -40,28 +40,24 @@ class TallRightView extends Ui.WatchFace {
         var clockTime = Sys.getClockTime();
         var hours = clockTime.hour;
         var mins = clockTime.min;
-        var zeroPad = App.getApp().getProperty("PadWithLeadingZeroes");
-        if (Sys.getDeviceSettings().is24Hour) {
-        	modifyLabel("AMPMLabel1", colors.hours, "");
-        	modifyLabel("AMPMLabel2", colors.hours, "");
-        } else {
-	        var ampm = hours >= 12 ? "PM" : "AM";
+        var zeroPadHours = App.getApp().getProperty("PadHoursWithLeadingZeroes");
+        var zeroPadMinutes = App.getApp().getProperty("PadMinutesWithLeadingZeroes");
+        var ampm = "";
+        if (!Sys.getDeviceSettings().is24Hour) {
+	        ampm = hours >= 12 ? "PM" : "AM";
             if (hours > 12) {
                 hours = hours - 12;
             }
-            if (hours >= 10 || zeroPad) {
-	        	modifyLabel("AMPMLabel1", colors.hours, ampm);
-    	    	modifyLabel("AMPMLabel2", colors.hours, "");
-            } else {
-        		modifyLabel("AMPMLabel1", colors.hours, "");
-        		modifyLabel("AMPMLabel2", colors.hours, ampm);
-            }
         }
-        if (zeroPad) {
+        modifyLabel("AMPMLabel", colors.ampm, ampm);
+        if (zeroPadHours) {
             hours = hours.format("%02d");
-            mins = mins.format("%02d");
         } else {
             hours = hours.format("%d");
+        }
+        if (zeroPadMinutes) {
+            mins = mins.format("%02d");
+        } else {
             mins = mins.format("%d");
         }
 
@@ -106,11 +102,11 @@ class TallRightView extends Ui.WatchFace {
 		var moveBarDrawable = View.findDrawableById("MoveBar");
 		moveBarDrawable.goal = 1.0;
 		moveBarDrawable.current = moveBarProgress;
-		moveBarDrawable.outlineColor = colors.background;
+		moveBarDrawable.outlineColor = colors.dataBackground;
 		moveBarDrawable.progressColor = getProgressColor(1, 1);
 		moveBarDrawable.reachedColor = getProgressColor(1, 0);
 		var moveLabel = View.findDrawableById("MoveLabel");
-		moveLabel.setColor(colors.background);
+		moveLabel.setColor(colors.dataBackground);
 		moveLabel.setText(moveBarProgress < 0.8 ? "Move!" : "M o v e !");
 
         // Call the parent onUpdate function to redraw the layout

@@ -1,6 +1,14 @@
 <settings>
 
-    <setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColorTitle">
+    <setting propertyKey="@Properties.TimeBackgroundColor" title="@Strings.TimeBackgroundColorTitle">
+        <settingConfig type="alphaNumeric"/>
+    </setting>
+
+    <setting propertyKey="@Properties.StatusBackgroundColor" title="@Strings.StatusBackgroundColorTitle">
+        <settingConfig type="alphaNumeric"/>
+    </setting>
+
+    <setting propertyKey="@Properties.DataBackgroundColor" title="@Strings.DataBackgroundColorTitle">
         <settingConfig type="alphaNumeric"/>
     </setting>
 
@@ -9,6 +17,10 @@
     </setting>
 
     <setting propertyKey="@Properties.MinutesColor" title="@Strings.MinutesColorTitle">
+        <settingConfig type="alphaNumeric"/>
+    </setting>
+
+    <setting propertyKey="@Properties.AMPMColor" title="@Strings.AMPMColorTitle">
         <settingConfig type="alphaNumeric"/>
     </setting>
 
@@ -56,7 +68,11 @@
         <settingConfig type="alphaNumeric"/>
     </setting>
 
-    <setting propertyKey="@Properties.PadWithLeadingZeroes" title="@Strings.PadWithLeadingZeroesTitle">
+    <setting propertyKey="@Properties.PadHoursWithLeadingZeroes" title="@Strings.PadHoursWithLeadingZeroesTitle">
+        <settingConfig type="boolean" />
+    </setting>
+
+    <setting propertyKey="@Properties.PadMinutesWithLeadingZeroes" title="@Strings.PadMinutesWithLeadingZeroesTitle">
         <settingConfig type="boolean" />
     </setting>
 
