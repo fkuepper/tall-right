@@ -5,7 +5,7 @@
     <string id="StatusBackgroundColorTitle">Watch Status Background Color</string>
     <string id="DataBackgroundColorTitle">Data Background Color</string>
     <string id="TimeBackgroundColorTitle">Time Background Color</string>
-    <string id="AMPMColorTitle">AM/PM-Marker Color (for 12 hours time display))</string>
+    <string id="AMPMColorTitle">AM/PM-Marker Color (for 12 hours time display)</string>
     <string id="HoursColorTitle">Hours Color</string>
     <string id="MinutesColorTitle">Minutes Color</string>
     <string id="DateColorTitle">Date Color</string>
