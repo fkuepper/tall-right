@@ -36,12 +36,12 @@ class ColorValues {
     	if (!(colorSpec instanceof Toybox.Lang.String)) {
     		return defaultColor;
     	}
-    	if (colorSpec.length() != 8) {
+    	if (colorSpec.length() != 5) {
     		return defaultColor;
     	}
-    	var red = calculateColorComponent(colorSpec, 0, 2);
-    	var green = calculateColorComponent(colorSpec, 3, 5);
-    	var blue = calculateColorComponent(colorSpec, 6, 8);
+    	var red = calculateColorComponent(colorSpec, 0, 1);
+    	var green = calculateColorComponent(colorSpec, 2, 3);
+    	var blue = calculateColorComponent(colorSpec, 4, 5);
     	if (red == null || green == null || blue == null) {
     		return defaultColor;
     	}
@@ -49,7 +49,15 @@ class ColorValues {
 	}
 	
 	function calculateColorComponent(colorSpec, start, end) {
-		var value = colorSpec.substring(start, end).toNumberWithBase(10);
-		return value == null ? null : value * 256 / 100;
+		var value = null;
+		try {
+			value = colorSpec.substring(start, end).toNumberWithBase(10);
+			if (value > 3) {
+				value = 3;
+			}
+		} catch (e) {
+			value = null;
+		}
+		return value == null ? null : value * 0x55;
 	}
 }
