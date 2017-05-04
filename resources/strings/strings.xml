@@ -6,6 +6,7 @@
     <string id="AMPMColorTitle">AM/PM-Marker Color (for 12 hours time display)</string>
     <string id="HoursColorTitle">Hours Color</string>
     <string id="MinutesColorTitle">Minutes Color</string>
+    <string id="SecondsColorTitle">Seconds Color</string>
     <string id="DateColorTitle">Date Color</string>
     <string id="BatteryColorTitle">Battery Color</string>
     <string id="BluetoothColorTitle">Bluetooth indicator Color</string>
@@ -19,5 +20,7 @@
     <string id="StepsGoalReachedColorTitle">Steps Goal Reached Color</string>
     <string id="PadHoursWithLeadingZeroesTitle">Pad hours with leading zero</string>
     <string id="PadMinutesWithLeadingZeroesTitle">Pad minutes with leading zero</string>
+    <string id="PadSecondsWithLeadingZeroesTitle">Pad seconds with leading zero</string>
     <string id="EnableMoveBarTitle">Enable Move Bar</string>
+    <string id="EnableSecondsTitle">Show seconds in high power mode</string>
 </strings>

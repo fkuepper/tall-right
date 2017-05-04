@@ -9,8 +9,19 @@ using Toybox.Application as App;
 
 class TallRightView extends Ui.WatchFace {
 
+	var highPowerMode = false;
+
     function initialize() {
         WatchFace.initialize();
+    }
+    
+    function onEnterSleep() {
+    	highPowerMode = false;
+    	Ui.requestUpdate();
+    }
+    
+    function onExitSleep() {
+    	highPowerMode = true;
     }
 
     // Load your resources here
@@ -31,6 +42,9 @@ class TallRightView extends Ui.WatchFace {
 		// get, format and show date
     	var dateInfo = Calendar.info( Time.now(), Calendar.FORMAT_LONG );
 		var dateDayString = Lang.format("$1$", [ dateInfo.day_of_week ]);
+		if (dateDayString.length() > 3) {
+			dateDayString = dateDayString.substring(0, 3);
+		}
 		var dateMonthString = Lang.format("$1$. $2$", [ dateInfo.day, dateInfo.month ]);
 
 		modifyLabel("DateDayLabel", colors.date, dateDayString);
@@ -40,8 +54,10 @@ class TallRightView extends Ui.WatchFace {
         var clockTime = Sys.getClockTime();
         var hours = clockTime.hour;
         var mins = clockTime.min;
+        var secs = clockTime.sec;
         var zeroPadHours = App.getApp().getProperty("PadHoursWithLeadingZeroes");
         var zeroPadMinutes = App.getApp().getProperty("PadMinutesWithLeadingZeroes");
+        var zeroPadSeconds = App.getApp().getProperty("PadSecondsWithLeadingZeroes");
         var ampm = "";
         if (!Sys.getDeviceSettings().is24Hour) {
 	        ampm = hours >= 12 ? "PM" : "AM";
@@ -50,19 +66,17 @@ class TallRightView extends Ui.WatchFace {
             }
         }
         modifyLabel("AMPMLabel", colors.ampm, ampm);
-        if (zeroPadHours) {
-            hours = hours.format("%02d");
+        hours = hours.format(zeroPadHours ? "%02d" : "%d");
+        mins = mins.format(zeroPadMinutes ? "%02d" : "%d");
+        if (highPowerMode && App.getApp().getProperty("EnableSeconds")) {
+	        secs = secs.format(zeroPadSeconds ? "%02d" : "%d");
         } else {
-            hours = hours.format("%d");
-        }
-        if (zeroPadMinutes) {
-            mins = mins.format("%02d");
-        } else {
-            mins = mins.format("%d");
+        	secs = "";
         }
 
         modifyLabel("TimeHoursLabel", colors.hours, hours);
         modifyLabel("TimeMinsLabel", colors.minutes, mins);
+        modifyLabel("TimeSecsLabel", colors.seconds, secs);
 
         var systemStats = Sys.getSystemStats();
 
@@ -115,6 +129,9 @@ class TallRightView extends Ui.WatchFace {
 
     function modifyLabel(drawableId, color, labelText) {
 		var view = View.findDrawableById(drawableId);
+		if (view == null) {
+			return;
+		}
 		if (color != null) {
         	view.setColor(color);
         }
@@ -143,13 +160,4 @@ class TallRightView extends Ui.WatchFace {
     // memory.
     function onHide() {
     }
-
-    // The user has just looked at their watch. Timers and animations may be started here.
-    function onExitSleep() {
-    }
-
-    // Terminate any active timers and prepare for slow updates.
-    function onEnterSleep() {
-    }
-
 }

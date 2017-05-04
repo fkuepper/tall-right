@@ -7,6 +7,7 @@
     <property id="AMPMColor" type="string">3-3-3</property>
     <property id="HoursColor" type="string">3-3-3</property>
     <property id="MinutesColor" type="string">3-3-3</property>
+    <property id="SecondsColor" type="string">3-3-3</property>
     <property id="BatteryColor" type="string">3-3-3</property>
     <property id="BluetoothColor" type="string">3-3-3</property>
     <property id="AlarmsColor" type="string">3-3-3</property>
@@ -19,6 +20,8 @@
     <property id="StepsGoalReachedColor" type="string">3-3-3</property>
     <property id="PadHoursWithLeadingZeroes" type="boolean">false</property>
     <property id="PadMinutesWithLeadingZeroes" type="boolean">true</property>
+    <property id="PadSecondsWithLeadingZeroes" type="boolean">true</property>
+    <property id="EnableSeconds" type="boolean">true</property>
     <property id="EnableMoveBar" type="boolean">true</property>
 
 </properties>

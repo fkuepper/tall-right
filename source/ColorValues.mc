@@ -3,7 +3,7 @@ class ColorValues {
 	hidden var white = 0xFFFFFF;
 	
 	var dataBackground, timeBackground, statusBackground,
-		ampm, hours, minutes, date, 
+		ampm, hours, minutes, seconds, date, 
 		battery, bluetooth, dnd, alarms, notifications,
 		stepsProgress, stepsProgressOutline, stepsGoalReached, 
 		calories, heartrate;
@@ -15,6 +15,7 @@ class ColorValues {
 		ampm = parseColor(propertyProvider, "AMPMColor", white);
 		hours = parseColor(propertyProvider, "HoursColor", white);
 		minutes = parseColor(propertyProvider, "MinutesColor", white);
+		seconds = parseColor(propertyProvider, "SecondsColor", white);
 		date = parseColor(propertyProvider, "DateColor", white);
 		battery = parseColor(propertyProvider, "BatteryColor", white);
 		bluetooth = parseColor(propertyProvider, "BluetoothColor", white);

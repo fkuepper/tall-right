@@ -1,5 +1,9 @@
 <settings>
 
+    <setting propertyKey="@Properties.EnableSeconds" title="@Strings.EnableSecondsTitle">
+        <settingConfig type="boolean" />
+    </setting>
+
     <setting propertyKey="@Properties.TimeBackgroundColor" title="@Strings.TimeBackgroundColorTitle">
         <settingConfig type="alphaNumeric"/>
     </setting>
@@ -17,6 +21,10 @@
     </setting>
 
     <setting propertyKey="@Properties.MinutesColor" title="@Strings.MinutesColorTitle">
+        <settingConfig type="alphaNumeric"/>
+    </setting>
+
+    <setting propertyKey="@Properties.SecondsColor" title="@Strings.SecondsColorTitle">
         <settingConfig type="alphaNumeric"/>
     </setting>
 
@@ -73,6 +81,10 @@
     </setting>
 
     <setting propertyKey="@Properties.PadMinutesWithLeadingZeroes" title="@Strings.PadMinutesWithLeadingZeroesTitle">
+        <settingConfig type="boolean" />
+    </setting>
+
+    <setting propertyKey="@Properties.PadSecondsWithLeadingZeroes" title="@Strings.PadSecondsWithLeadingZeroesTitle">
         <settingConfig type="boolean" />
     </setting>
 
