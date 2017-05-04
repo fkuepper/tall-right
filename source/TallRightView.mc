@@ -22,6 +22,7 @@ class TallRightView extends Ui.WatchFace {
     
     function onExitSleep() {
     	highPowerMode = true;
+    	Ui.requestUpdate();
     }
 
     // Load your resources here
